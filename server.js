@@ -4,16 +4,16 @@ const cors = require('cors');
 const knex = require('knex');
 const bcrypt = require('bcrypt');
 
-const db = knex({
-    client: 'pg',
-    connection: {
-      host : '127.0.0.1',
-      port : 5432,
-      user : 'postgres',
-      password : 'test',
-      database : 'smartbrain'
-    }
-  });
+// const db = knex({
+//     client: 'pg',
+//     connection: {
+//       host : '127.0.0.1',
+//       port : 5432,
+//       user : 'postgres',
+//       password : 'test',
+//       database : 'smartbrain'
+//     }
+//   });
 
 // db.select('*').from('users').then(data => {
 //     console.log(data);
