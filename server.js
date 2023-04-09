@@ -2,22 +2,18 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const knex = require('knex');
-// const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt-nodejs');
 
-// const db = knex({
-//     client: 'pg',
-//     connection: {
-//       host : '127.0.0.1',
-//       port : 5432,
-//       user : 'postgres',
-//       password : 'test',
-//       database : 'smartbrain'
-//     }
-//   });
-
-// db.select('*').from('users').then(data => {
-//     console.log(data);
-// })
+const db = knex({
+    client: 'pg',
+    connection: {
+      host : '127.0.0.1',
+      port : 5432,
+      user : 'postgres',
+      password : 'test',
+      database : 'smartbrain'
+    }
+  });
 
 
 const app = express();
@@ -56,8 +52,8 @@ app.post('/register', (req, res) => {
     if(!email || !name || !password) {
         return res.status(400).json('incorrect form submission');
     }
-    const saltRounds = 10;
-    const hash = bcrypt.hashSync(password, saltRounds);
+
+    const hash = bcrypt.hashSync(password);
     db.transaction(trx => {
         trx.insert({
             hash: hash,
