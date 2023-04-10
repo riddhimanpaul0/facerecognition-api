@@ -4,28 +4,28 @@ const cors = require('cors');
 const knex = require('knex');
 const bcrypt = require('bcrypt-nodejs');
 
-// const db = knex({
-//     client: 'pg',
-//     connection: {
-//       connectionString : process.env.DATABASE_URL,
-//       ssl: {
-//         rejectUnauthorized: false
-//       }
-//     }
-//   });
-
 const db = knex({
     client: 'pg',
     connection: {
-      connectionString : 'dpg-cgpjen0u9tun42tih5hg-a.oregon-postgres.render.com',
-      ssl: { rejectUnauthorized: false},
-      host: 'dpg-cgpjen0u9tun42tih5hg-a',
-      port: 5432,
-      user: 'mydb_sin1_user',
-      password: 'YCzYI5AApNQd3ENAiPaKsO26AcEDCBZE',
-      database: 'mydb_sin1'
+      connectionString : process.env.DATABASE_URL,
+      ssl: {
+        rejectUnauthorized: false
+      }
     }
   });
+
+// const db = knex({
+//     client: 'pg',
+//     connection: {
+//       connectionString : 'dpg-cgpjen0u9tun42tih5hg-a.oregon-postgres.render.com',
+//       ssl: { rejectUnauthorized: false},
+//       host: 'dpg-cgpjen0u9tun42tih5hg-a',
+//       port: 5432,
+//       user: 'mydb_sin1_user',
+//       password: 'YCzYI5AApNQd3ENAiPaKsO26AcEDCBZE',
+//       database: 'mydb_sin1'
+//     }
+//   });
 
 
 const app = express();
