@@ -17,9 +17,9 @@ const bcrypt = require('bcrypt-nodejs');
 const db = knex({
     client: 'pg',
     connection: {
-      connectionString : process.env.DATABASE_URL,
+      connectionString : 'dpg-cgpjen0u9tun42tih5hg-a.oregon-postgres.render.com',
       ssl: { rejectUnauthorized: false},
-      host: 'dpg-cgpjen0u9tun42tih5hg-a.oregon-postgres.render.com',
+      host: 'dpg-cgpjen0u9tun42tih5hg-a',
       port: 5432,
       user: 'mydb_sin1_user',
       password: 'YCzYI5AApNQd3ENAiPaKsO26AcEDCBZE',
