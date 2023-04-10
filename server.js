@@ -14,13 +14,26 @@ const bcrypt = require('bcrypt-nodejs');
 //     }
 //   });
 
+const db = knex({
+    client: 'pg',
+    connection: {
+      connectionString : process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false},
+      host: 'dpg-cgpjen0u9tun42tih5hg-a.oregon-postgres.render.com',
+      port: 5432,
+      user: 'mydb_sin1_user',
+      password: 'YCzYI5AApNQd3ENAiPaKsO26AcEDCBZE',
+      database: 'mydb_sin1'
+    }
+  });
+
 
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send('success')
+    res.send('success23')
 })
 
 app.post('/signin', (req, res) => {
